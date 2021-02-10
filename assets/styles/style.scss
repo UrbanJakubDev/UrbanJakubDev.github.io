@@ -1,0 +1,24 @@
+
+@import 'functions';
+
+// Colors
+@import 'colors';
+
+// Variables
+@import 'variables';
+
+// Normalize
+@import 'normalize';
+@import 'global';
+
+//Componenets
+@import "components/logo";
+@import "components/card";
+@import "components/navbar";
+@import "components/contentswitch";
+
+
+//Views
+@import "views/landingpage"
+
+

@@ -1,58 +1,71 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        portfolioNuxt
-      </h1>
-      <div class="links">
-        <NuxtLink to="portfolio/01">Link</NuxtLink>
-      </div>
+  <div class="content__container">
+    <div class="landing__page">
+      <section class="portfolio">
+        <h2>Kodér, Programátor, Tech lover</h2>
+        <p>
+          Programátor, Kodér, UI/UX designer samouk, Tech lover a nadšenec do
+          Automatizace a IOT. Zajímám se o novinky v oblasti vývoje webů. S
+          vytvářením webů jsem začal poměrně nedávno. Proto v tuto chvíli
+          prohlubuji své znalosti a dovednosti, abych mohl v blízké budoucnosti
+          pracovat na tvorbě zajímavých webů a webových aplikací.
+        </p>
+      </section>
+      <!-- <div class="content">
+        <NuxtLink to="/about" class="card" v-for="item in cardList" :key="item.id">
+          <Card :cardText='item.text' :cardTags="cardTags" />
+        </NuxtLink>
+      </div> -->
+
+      <section class="social">
+        <a href=""><i class="fab fa-github"></i></a>
+        <a href=""><i class="fab fa-linkedin"></i></a>
+        <a href=""><i class="fab fa-dribbble"></i></a>
+        <a href=""><i class="fab fa-instagram"></i></a>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Icon from '../assets/icons/github.svg'
+export default {
+  data() {
+    return {
+      cardTags: [
+        { id: 1, name: 'css' },
+        { id: 2, name: 'html' },
+      ],
+      cardList: [
+        { id: 1, text: 'css' },
+        { id: 2, text: 'css' },
+        { id: 3, text: 'css' },
+        { id: 4, text: 'css' },
+        { id: 5, text: 'css' },
+        { id: 6, text: 'css' },
+      ],
+    }
+  },
+}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style lang="scss">
+.social {
+  .fab {
+    font-size: 5rem;
+    margin-right: 1.5rem;
+  }
+  .fa-github {
+    color: var(--color-text-primary);
+  }
+  .fa-dribbble {
+    color: #ea4c89 ;
+  }
+  .fa-linkedin {
+    color: #0077b5;
+  }
+  .fa-instagram {
+    color: #e4405f;
+  }
 }
 </style>
