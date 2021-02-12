@@ -1,7 +1,11 @@
 <template>
-  <span id="nav-theme" class="material-icons medium icon-theme" @click="changeTheme()">
+  <div
+    id="nav-theme"
+    class="material-icons medium icon-theme"
+    @click="changeTheme()"
+  >
     {{ themeIcon }}
-  </span>
+  </div>
 </template>
 
 <script>
@@ -13,6 +17,7 @@ export default {
     }
   },
   methods: {
+    /** This is a description of the foo function. */
     changeTheme() {
       this.isLightTheme = !this.isLightTheme
       this.themeIcon = this.isLightTheme ? 'light_mode' : 'dark_mode'
@@ -23,7 +28,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icon-theme{
+.icon-theme {
   cursor: pointer;
+  width: 56px;
+  height: 56px;
+  text-align: center;
 }
 </style>
