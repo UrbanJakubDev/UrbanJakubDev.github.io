@@ -30,6 +30,7 @@
 <script>
 import Icon from '../assets/icons/github.svg'
 export default {
+  layout: 'default',
   data() {
     return {
       cardTags: [

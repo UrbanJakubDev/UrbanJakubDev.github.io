@@ -1,5 +1,5 @@
 <template>
-  <div>
+   <div class="content__container">
     <section class="portfolio">
         <h2>Ahoj, jsem Jakub</h2>
         <p>
@@ -27,6 +27,7 @@
 
 <script>
   export default {
+    layout: 'default'
 
   }
 </script>

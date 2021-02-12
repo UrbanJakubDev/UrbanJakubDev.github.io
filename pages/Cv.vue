@@ -1,5 +1,5 @@
 <template>
-  <div>
+   <div class="content__container">
     <section class="portfolio">
       <h2>Ahoj, jsem Jakub</h2>
       <p>
@@ -36,28 +36,43 @@
     <section class="expreience">
       <h2>Moje současné cíle</h2>
       <ul v-for="user in ip" :key="user.id">
-        <li >{{user.name}} + {{user.email}}</li>
+        <li>{{ user.name }} + {{ user.email }}</li>
       </ul>
 
+      <h2>Axios package</h2>
+      <ul v-for="user in test" :key="user.id">
+        <li>{{ user.name }} + {{ user.email }}</li>
+      </ul>
     </section>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
+  layout: 'default',
   data() {
     return {
-      ip: []
+      ip: [],
+      test: [],
     }
   },
-  mounted () {
-    this.fetchSomething();
+  mounted() {
+    this.fetchSomething()
+    this.testAxios()
   },
   methods: {
     async fetchSomething() {
       const ip = await this.$axios.$get('/users')
-      console.log(ip);
+      console.log(ip)
       this.ip = ip
+    },
+
+    testAxios() {
+      axios.get('http://localhost:5000/api/users').then((response) => {
+        console.log(response)
+        this.test = response.data
+      }).catch(console.error())
     },
   },
 }
