@@ -29,7 +29,10 @@ export default {
         href:
           'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
       },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.0/css/all.css'}
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.8.0/css/all.css',
+      },
     ],
   },
 
@@ -38,6 +41,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
+
+  styleResources: {
+    scss: ['~/assets/styles/_colors.scss'],
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -51,11 +58,12 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-  baseURL: 'http://localhost:5000/api',
+    baseURL: 'http://localhost:5000/api',
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
