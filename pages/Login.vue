@@ -1,28 +1,30 @@
 <template>
-  <div class="login_container box-shadow neumorphism">
+  <div class='login_container box-shadow neumorphism'>
     <h3>Please login</h3>
-    <form action="#" class="login_form">
-      <div class="input-box">
-        <i class="fas fa-user"></i>
-        <input id="username" type="text" placeholder="Username" />
+    <form action='#' class='login_form'>
+      <div class='input-box'>
+        <i class='fas fa-user'></i>
+        <label for='username'></label>
+        <input id='username' type='text' placeholder='Username' />
       </div>
-      <div class="input-box">
-        <i class="fas fa-unlock"></i>
-        <input id="pass" type="text" placeholder="Password" />
+      <div class='input-box'>
+        <i class='fas fa-unlock'></i>
+        <label for='pass'></label>
+        <input id='pass' type='text' placeholder='Password' />
       </div>
 
-      <button class="" type="submit">Login</button>
+      <button class='' type='submit'>Login</button>
     </form>
   </div>
 </template>
 
 <script>
 export default {
-  layout: 'login',
+  layout: 'login'
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 .login_container {
   text-align: center;
   font-size: 1.5rem;

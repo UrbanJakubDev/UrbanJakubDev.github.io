@@ -3,9 +3,7 @@
     <h3>Admin Menu</h3>
     <div class="admin__navbar">
       <div class="nav__links">
-        <NuxtLink to="/about">About Me</NuxtLink>
-        <NuxtLink to="/portfolio">Portfolio</NuxtLink>
-        <NuxtLink to="/cv">CV</NuxtLink>
+        <NuxtLink to="/admin/dashboard">Posts</NuxtLink>
       </div>
     </div>
   </div>

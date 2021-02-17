@@ -33,18 +33,6 @@ export default {
   layout: 'default',
   data() {
     return {
-      cardTags: [
-        { id: 1, name: 'css' },
-        { id: 2, name: 'html' },
-      ],
-      cardList: [
-        { id: 1, text: 'css' },
-        { id: 2, text: 'css' },
-        { id: 3, text: 'css' },
-        { id: 4, text: 'css' },
-        { id: 5, text: 'css' },
-        { id: 6, text: 'css' },
-      ],
     }
   },
 }

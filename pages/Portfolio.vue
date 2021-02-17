@@ -1,31 +1,40 @@
 <template>
   <div class="content__container">
-    <ul>
-      <li v-for="article of articles" :key="article.slug">
-        <NuxtLink :to="'portfolio/' + article.slug">
-          <div>
-            <h2>{{ article.title }}</h2>
-            <p>{{ article.description }}</p>
-          </div>
-        </NuxtLink>
-      </li>
-    </ul>
+      <ul v-for="post of postList" :key="post.id">
+          <li><PostPreview :post="post" /></li>
+      </ul>
   </div>
 
 </template>
 
 <script>
+import axios from "axios"
 export default {
   layout: 'default',
-  async asyncData({ $content, params }) {
-    const articles = await $content('articles', params.slug)
-      //.only(['title', 'slug', 'description'])
-      .sortBy('createdAt', 'asc')
-      .fetch()
-
+  data() {
     return {
-      articles,
+      title: 'Portfolio / Posts',
+      postList: [],
     }
+  },
+  head() {
+    return {
+      title: this.title,
+    }
+  },
+  mounted() {
+    this.getAllPosts()
+  },
+  methods: {
+    getAllPosts() {
+      axios
+        .get('http://localhost:5000/api/posts')
+        .then((response) => {
+          console.log(response)
+          this.postList = response.data
+        })
+        .catch(console.error())
+    },
   },
 }
 </script>
