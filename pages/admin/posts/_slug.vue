@@ -1,7 +1,8 @@
 <template>
   <div>
     {{ postList }}
-    {{ urlParam }}
+
+    <NuxtLink to="/admin/dashboard">Back</NuxtLink>
   </div>
 </template>
 
