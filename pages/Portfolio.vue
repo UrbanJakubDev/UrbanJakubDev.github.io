@@ -1,14 +1,13 @@
 <template>
   <div class="content__container">
-      <ul v-for="post of postList" :key="post.id">
-          <li><PostPreview :post="post" /></li>
-      </ul>
+    <div v-for="post of postList" :key="post.id">
+      <PostPreview :post="post" />
+    </div>
   </div>
-
 </template>
 
 <script>
-import axios from "axios"
+import axios from 'axios'
 export default {
   layout: 'default',
   data() {
