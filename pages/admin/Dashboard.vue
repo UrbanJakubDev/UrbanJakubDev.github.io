@@ -1,9 +1,7 @@
 <template>
   <div>
     posts
-    <ul v-for="post in postList" :key="post.id">
-      <li>{{ post.title }}</li>
-    </ul>
+    <PostsTab :postList="postList" />
   </div>
 </template>
 
