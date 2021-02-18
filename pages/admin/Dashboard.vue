@@ -1,6 +1,11 @@
 <template>
-  <div>
-    posts
+  <div class="content__container">
+    <div class="card-list">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
     <PostsTab :postList="postList" />
   </div>
 </template>
@@ -38,4 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.card-list{
+  display: flex;
+}
 </style>
