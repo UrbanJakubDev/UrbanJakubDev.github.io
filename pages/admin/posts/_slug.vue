@@ -11,6 +11,7 @@
 <script>
 import axios from 'axios'
 export default {
+  layout:'admin',
   data() {
     return {
       title: 'Dashboard',

@@ -6,12 +6,12 @@ export default {
   head: {
     title: 'portfolioNuxt',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'cz',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'Personal portfolio web development', content: '' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'static/favicon.ico' },
