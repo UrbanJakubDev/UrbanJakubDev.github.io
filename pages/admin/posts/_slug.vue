@@ -1,6 +1,8 @@
 <template>
-  <div>
-    {{ postList }}
+  <div class="single-post-wrapper">
+    <h3>post | {{ postList.title }}</h3>
+    <small> {{ postList.slug }}</small>
+    <p>{{ postList.content }}</p>
 
     <NuxtLink to="/admin/dashboard">Back</NuxtLink>
   </div>
@@ -13,10 +15,9 @@ export default {
     return {
       title: 'Dashboard',
       postList: {},
-      urlParam: ''
+      urlParam: '',
     }
   },
-
   head() {
     return {
       title: this.title,
