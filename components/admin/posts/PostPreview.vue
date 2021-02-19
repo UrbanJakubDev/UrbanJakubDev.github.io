@@ -1,15 +1,16 @@
 <template>
   <div class="post-preview-container">
+    <NuxtLink :to="{ name: 'portfolio-slug', params: { slug: post.id }}">
     <div class="post-header">
       <img src="" alt="">
     </div>
     <div class="post-body">
-      <h4>{{ post.title }}</h4>
+      <h3 to="/">{{ post.title }}</h3>
       <p>{{ post.content}}</p>
       <Tags :tags="post.tags" />
 
     </div>
-
+  </NuxtLink>
   </div>
 </template>
 
@@ -29,6 +30,7 @@
   margin: 3rem auto;
   border-bottom: 2px dotted gray;
   display: flex;
+  background-color: dimgrey;
 }
 
 .tags{
