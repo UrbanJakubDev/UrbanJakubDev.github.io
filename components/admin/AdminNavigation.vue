@@ -3,7 +3,8 @@
     <h3>Admin Menu</h3>
     <div class="admin__navbar">
       <div class="nav__links">
-        <NuxtLink to="/admin/dashboard">Posts</NuxtLink>
+        <NuxtLink to="/admin/dashboard">Dashboard</NuxtLink>
+        <NuxtLink to="/admin/posts">Posts</NuxtLink>
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@
           <Nuxt class="page_content" />
       </div>
     <footer><Footer /></footer>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -22,13 +22,6 @@ export default {}
 .logo{
   font-size: 1rem;
 }
-.page_container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .page_header {
   //background-color: var(--color-header-bg);
   position: sticky;

@@ -1,10 +1,17 @@
 <template>
   <div class="single-post-wrapper">
+    <NuxtLink to="/admin/dashboard">Back</NuxtLink>
+    post index
     <h3>post | {{ postList.title }}</h3>
     <small> {{ postList.slug }}</small>
     <p>{{ postList.content }}</p>
 
-    <NuxtLink to="/admin/dashboard">Back</NuxtLink>
+    <div class="button-group">
+      <NuxtLink :to="{ name: 'admin-post-id-create'}">Create</NuxtLink>
+      <NuxtLink :to="{ name: 'admin-post-id-edit', params: { id: postID }}">Edit</NuxtLink>
+      <NuxtLink to="/">Delete</NuxtLink>
+    </div>
+
   </div>
 </template>
 
@@ -14,7 +21,8 @@ export default {
   layout:'admin',
   data() {
     return {
-      title: 'Dashboard',
+      title: 'Posts Single poage',
+      postID: '',
       postList: {},
       urlParam: '',
     }
@@ -25,7 +33,9 @@ export default {
     }
   },
   mounted() {
-    this.getAllPosts($nuxt.$route.params.slug)
+    let paramId = $nuxt.$route.params.id
+    this.getAllPosts(paramId)
+    this.postID = paramId
   },
   methods: {
     getAllPosts(params) {

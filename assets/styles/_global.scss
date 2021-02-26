@@ -74,6 +74,16 @@ body {
   max-width: 700px;
 }
 
+.page_container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1700px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /* Typography
     –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1,

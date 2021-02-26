@@ -12,7 +12,7 @@
           <td>{{ post.title }}</td>
           <td>{{ post.slug }}</td>
           <td>{{ dateFormat(post.createdAt) }}</td>
-          <td><NuxtLink :to="{ name: 'admin-posts-slug', params: { slug: post.id }}">Link</NuxtLink></td>
+          <td><NuxtLink :to="{ name: 'admin-post-id', params: { id: post.id }}">Link</NuxtLink></td>
         </tr>
       </tbody>
     </table>
