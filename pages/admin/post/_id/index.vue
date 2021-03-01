@@ -2,7 +2,7 @@
   <div class="single-post-wrapper">
     <NuxtLink to="/admin/dashboard"> Back</NuxtLink>
     <h3>post | {{ postData.title }}</h3>
-    <p>{{ postData.content }}</p>
+    <p v-html="postData.content"></p>
 
     <div class="button-group">
       <NuxtLink :to="{ name: 'admin-post-id-create' }" class="btn">Create</NuxtLink>
