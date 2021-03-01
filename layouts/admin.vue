@@ -36,6 +36,7 @@ export default {}
 }
 
 .base_page {
+
   max-width: 1700px;
   min-height: 100vh;
   display: flex;
@@ -48,8 +49,8 @@ export default {}
 }
 
 .page_content {
+  margin: 2rem auto;
   width: 100%;
-  background-color: blueviolet;
 }
 
 footer {

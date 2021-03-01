@@ -1,11 +1,9 @@
 <template>
   <div class="admin__navigation__container">
-    <h3>Admin Menu</h3>
-    <div class="admin__navbar">
-      <div class="nav__links">
-        <NuxtLink to="/admin/dashboard">Dashboard</NuxtLink>
-        <NuxtLink to="/admin/posts">Posts</NuxtLink>
-      </div>
+    <h4>Admin Menu</h4>
+    <div class="nav__links">
+      <NuxtLink to="/admin/dashboard">Dashboard</NuxtLink>
+      <NuxtLink to="/admin/posts">Posts</NuxtLink>
     </div>
   </div>
 </template>
@@ -22,22 +20,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.admin__navigation__container{
-  padding-left: 1rem;
+.admin__navigation__container {
   display: flex;
   flex-direction: column;
-  background-color: crimson;
-}
-
-.admin__navbar{
 
 }
 
-.nav__links{
-display: flex;
+h4{
+  margin: 0;
+}
+
+.nav__links {
+  display: flex;
   flex-direction: column;
-
 }
+
+a{
+  text-decoration: none;
+
+  &::before{
+    content: '> ';
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--color-text-secondary);
+  }
+}
+
 
 </style>

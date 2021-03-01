@@ -9,10 +9,10 @@
       </thead>
       <tbody>
         <tr v-for="post in postList" :key="post.id">
-          <td>{{ post.title }}</td>
+          <td><NuxtLink :to="{ name: 'admin-post-id', params: { id: post.id }}">{{ post.title}}</NuxtLink></td>
           <td>{{ post.slug }}</td>
           <td>{{ dateFormat(post.createdAt) }}</td>
-          <td><NuxtLink :to="{ name: 'admin-post-id', params: { id: post.id }}">Link</NuxtLink></td>
+          <td>ikony</td>
         </tr>
       </tbody>
     </table>

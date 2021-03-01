@@ -1,22 +1,27 @@
 <template>
   <div>
-    <form action="#">
-      <input type="text" id="name">
-      <input type="text" id="text">
-      <button></button>
+    <form action="#" id="postForm" method="post" @submit="checkForm">
+      <label for="name">Nazev postu</label>
+      <input type="text" id="name" v-model="postName" />
+
+      <label for="text">Text</label>
+      <input type="text" id="text" v-model="postText" />
+      <p>
+        <input type="submit" value="Submit" />
+      </p>
     </form>
   </div>
 </template>
 
-<script>
+<script>import axios from "axios"
+
 export default {
   layout: 'admin',
   data() {
     return {
       title: 'Posts Crete',
-      postID: '',
-      postList: {},
-      urlParam: '',
+      postName: null,
+      postText: null,
     }
   },
   head() {
@@ -24,7 +29,25 @@ export default {
       title: this.title,
     }
   },
-  mounted() {},
+  methods: {
+    checkForm(e) {
+
+      let data = {
+        title: this.postName,
+        content: this.postText,
+        slug: this.postName + '5'
+      }
+
+
+      axios
+      .post(`http://localhost:5000/api/posts`, data)
+        .then((response) => {
+          console.log(response)
+        })
+        .catch(console.error())
+      e.preventDefault();
+    },
+  },
 }
 </script>
 

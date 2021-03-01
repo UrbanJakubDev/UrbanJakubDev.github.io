@@ -12,6 +12,7 @@
 
 <style lang="scss" scoped>
 .card{
+  text-align: center;
   margin: 0 auto;
   border: 2px solid gray;
   padding: 1rem;
