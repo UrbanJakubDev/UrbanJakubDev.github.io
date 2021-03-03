@@ -6,7 +6,7 @@
     </div>
     <div class="post-body">
       <h3 to="/">{{ post.title }}</h3>
-      <p>{{ post.content}}</p>
+      <article v-html="post.content"></article>
       <Tags :tags="post.tags" />
 
     </div>

@@ -33,48 +33,12 @@
         <li>Docker</li>
       </ul>
     </section>
-    <section class="expreience">
-      <h2>Moje současné cíle</h2>
-      <ul v-for="user in ip" :key="user.id">
-        <li>{{ user.name }} + {{ user.email }}</li>
-      </ul>
-
-      <h2>Axios package</h2>
-      <ul v-for="user in test" :key="user.id">
-        <li>{{ user.name }} + {{ user.email }}</li>
-      </ul>
-    </section>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   layout: 'default',
-  data() {
-    return {
-      ip: [],
-      test: [],
-    }
-  },
-  mounted() {
-    this.fetchSomething()
-    this.testAxios()
-  },
-  methods: {
-    async fetchSomething() {
-      const ip = await this.$axios.$get('/users')
-      console.log(ip)
-      this.ip = ip
-    },
-
-    testAxios() {
-      axios.get('http://localhost:5000/api/users').then((response) => {
-        console.log(response)
-        this.test = response.data
-      }).catch(console.error())
-    },
-  },
 }
 </script>
 

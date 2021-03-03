@@ -19,6 +19,7 @@ export default {}
 
 
 .page_header {
+  width: 95%;
   //background-color: var(--color-header-bg);
   position: sticky;
   top: 0;
@@ -29,6 +30,7 @@ export default {}
 }
 
 .page_body {
+  width: 95%;
   margin: 0 auto;
 }
 
