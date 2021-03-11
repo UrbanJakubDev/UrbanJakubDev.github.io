@@ -7,6 +7,8 @@
       <Card />
     </div>
     <PostsTab :postList="postList" />
+
+    <NuxtLink :to="{ name: 'admin-post-id-create' }" class="btn">Create</NuxtLink>
   </div>
 </template>
 
@@ -45,5 +47,9 @@ export default {
 <style lang="scss" scoped>
 .card-list{
   display: flex;
+}
+
+figure{
+  width: 90%;
 }
 </style>
