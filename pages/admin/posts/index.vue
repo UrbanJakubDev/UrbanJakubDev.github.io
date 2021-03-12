@@ -8,7 +8,7 @@
     </div>
     <PostsTab :postList="postList" />
 
-    <NuxtLink :to="{ name: 'admin-post-id-create' }" class="btn">Create</NuxtLink>
+    <NuxtLink :to="{ name: 'admin-post-creatett' }" class="btn">Create</NuxtLink>
   </div>
 </template>
 

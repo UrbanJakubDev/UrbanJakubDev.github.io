@@ -249,10 +249,15 @@ hr {
   border-top: 1px solid #e1e1e1;
 }
 
+img{
+  max-width: 50rem;
+  width: 100%;
+}
+
 // Images
 img.responsive-img,
 video.responsive-video {
-  max-width: 100%;
+  max-width: 3100%;
   height: auto;
 }
 
@@ -390,6 +395,9 @@ video.responsive-video {
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
+  img{
+    width: 80%;
+  }
 }
 
 /* Larger than tablet */
@@ -397,6 +405,9 @@ video.responsive-video {
   .page_header,
   .page_body {
     max-width: 800px;
+  }
+  img{
+    width: 50%;
   }
 }
 

@@ -18,6 +18,7 @@
         <button class="btn" type="submit">Odeslat</button>
       </p>
     </form>
+    
   </div>
 </template>
 
@@ -48,7 +49,7 @@ export default {
     checkForm(e) {
       let data = {
         title: this.postName,
-        content: this.remove(this.editorContent),
+        content: this.filterFigure(this.editorContent),
         slug: this.postName + '5',
       }
 
@@ -77,16 +78,6 @@ export default {
         event.attachment.setAttributes(attributes)
       })
     },
-
-    remove(data){
-      data = data.toString()
-      console.log(data);
-      data = data.replace(/width=".*?"/,'width="100%"')
-      data = data.replace(/height=".*?"/,'')
-
-
-      return data
-    }
   },
 }
 </script>
