@@ -1,4 +1,28 @@
 /*!
+    * tiptap v1.32.0
+    * (c) 2021 überdosis GbR (limited liability)
+    * @license MIT
+    */
+
+/*!
+    * tiptap-commands v1.17.0
+    * (c) 2021 überdosis GbR (limited liability)
+    * @license MIT
+    */
+
+/*!
+    * tiptap-extensions v1.35.0
+    * (c) 2021 überdosis GbR (limited liability)
+    * @license MIT
+    */
+
+/*!
+    * tiptap-utils v1.13.0
+    * (c) 2021 überdosis GbR (limited liability)
+    * @license MIT
+    */
+
+/*!
   * vue-router v3.5.1
   * (c) 2021 Evan You
   * @license MIT
@@ -21,3 +45,17 @@
  * (c) 2018-present egoist <0x142857@gmail.com>
  * Released under the MIT License.
  */
+
+/**
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+//! moment.js
+
+//! moment.js locale configuration
