@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form action="#" id="postForm" method="post" @submit="checkForm">
+    <form action="#" id="postForm" method="post" @submit.prevent="checkForm">
       <div class="input-box">
         <label for="name">Nazev postu</label>
         <input type="text" id="name" v-model="postName" />
@@ -18,7 +18,6 @@
         <button class="btn" type="submit">Odeslat</button>
       </p>
     </form>
-    
   </div>
 </template>
 
@@ -27,6 +26,7 @@ import axios from 'axios'
 import VueTrix from 'vue-trix'
 
 export default {
+  name: 'TrixCreatePage',
   components: {
     VueTrix,
   },
@@ -36,8 +36,6 @@ export default {
       editorContent: '<h1>Editor contents</h1>',
       title: 'Posts Crete',
       postName: null,
-      postText: null,
-      remoteHost: 'http://localhost:5000/api/img',
     }
   },
   head() {
@@ -49,11 +47,11 @@ export default {
     checkForm(e) {
       let data = {
         title: this.postName,
-        content: this.filterFigure(this.editorContent),
+        content: this.editorContent,
         slug: this.postName + '5',
       }
 
-      const response = this.$axios.$post(`http://localhost:5000/api/posts`,data)
+      const response = this.$axios.$post(`/posts`, data)
       e.preventDefault()
     },
 
@@ -66,11 +64,9 @@ export default {
       let formData = new FormData()
       formData.append('file', file)
       this.$axios.$post(`/attachments/upload`, formData).then((data) => {
-
-
-        // // 3. if upload success, set back the attachment's URL attribute
-        // // @param object data from remote server response data after upload.
-        console.log(data);
+        // 3. if upload success, set back the attachment's URL attribute
+        // @param object data from remote server response data after upload.
+        console.log(data)
         let attributes = {
           url: data.result.secure_url,
           href: data.result.secure_url,

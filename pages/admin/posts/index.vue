@@ -8,7 +8,8 @@
     </div>
     <PostsTab :postList="postList" />
 
-    <NuxtLink :to="{ name: 'admin-post-creatett' }" class="btn">Create</NuxtLink>
+    <NuxtLink :to="{ name: 'admin-post-creatett' }" class="btn">Create TipTap</NuxtLink>
+    <NuxtLink :to="{ name: 'admin-post-create' }" class="btn">Create Trix</NuxtLink>
   </div>
 </template>
 

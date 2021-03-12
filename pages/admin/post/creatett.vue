@@ -9,131 +9,135 @@
       <div class="editor">
         <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
           <div class="menubar">
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.bold() }"
-              @click="commands.bold"
-            >
-              B
-            </button>
+            <div class="row">
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.bold() }"
+                @click="commands.bold"
+              >
+                B
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.italic() }"
-              @click="commands.italic"
-            >
-              I
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.italic() }"
+                @click="commands.italic"
+              >
+                I
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.strike() }"
-              @click="commands.strike"
-            >
-              S
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.strike() }"
+                @click="commands.strike"
+              >
+                S
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.underline() }"
-              @click="commands.underline"
-            >
-              U
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.underline() }"
+                @click="commands.underline"
+              >
+                U
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.code() }"
-              @click="commands.code"
-            >
-              code
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.code() }"
+                @click="commands.code"
+              >
+                code
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.paragraph() }"
-              @click="commands.paragraph"
-            >
-              p
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.paragraph() }"
+                @click="commands.paragraph"
+              >
+                p
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-              @click="commands.heading({ level: 1 })"
-            >
-              H1
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                @click="commands.heading({ level: 1 })"
+              >
+                H1
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-              @click="commands.heading({ level: 2 })"
-            >
-              H2
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                @click="commands.heading({ level: 2 })"
+              >
+                H2
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-              @click="commands.heading({ level: 3 })"
-            >
-              H3
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                @click="commands.heading({ level: 3 })"
+              >
+                H3
+              </button>
+            </div>
+            <div class="row">
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.bullet_list() }"
+                @click="commands.bullet_list"
+              >
+                ul
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.bullet_list() }"
-              @click="commands.bullet_list"
-            >
-              ul
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.ordered_list() }"
+                @click="commands.ordered_list"
+              >
+                ol
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.ordered_list() }"
-              @click="commands.ordered_list"
-            >
-              ol
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.blockquote() }"
+                @click="commands.blockquote"
+              >
+                "
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.blockquote() }"
-              @click="commands.blockquote"
-            >
-              "
-            </button>
+              <button
+                class="menubar__button"
+                :class="{ 'is-active': isActive.code_block() }"
+                @click="commands.code_block"
+              >
+                code block
+              </button>
 
-            <button
-              class="menubar__button"
-              :class="{ 'is-active': isActive.code_block() }"
-              @click="commands.code_block"
-            >
-              code block
-            </button>
+              <button
+                class="menubar__button"
+                @click="showImagePrompt(commands.image)"
+              >
+                img
+              </button>
 
-            <button
-              class="menubar__button"
-              @click="showImagePrompt(commands.image)"
-            >
-              img
-            </button>
+              <button class="menubar__button" @click="commands.horizontal_rule">
+                hr
+              </button>
+            </div>
+            <div class="row">
+              <button class="menubar__button" @click="commands.undo"><-</button>
 
-            <button class="menubar__button" @click="commands.horizontal_rule">
-              hr
-            </button>
-
-            <button class="menubar__button" @click="commands.undo"><-</button>
-
-            <button class="menubar__button" @click="commands.redo">-></button>
+              <button class="menubar__button" @click="commands.redo">-></button>
+            </div>
           </div>
         </editor-menu-bar>
 
         <editor-content class="editor__content" :editor="editor" />
       </div>
       <p>
-        <a @click.prevent="SendPost()">Odeslat</a>
+        <a class="btn" @click.prevent="SendPost()">Odeslat</a>
       </p>
     </div>
   </div>
@@ -159,7 +163,7 @@ import {
   Strike,
   Underline,
   History,
-  Image
+  Image,
 } from 'tiptap-extensions'
 export default {
   layout: 'admin',
@@ -203,7 +207,7 @@ export default {
           new Underline(),
           new History(),
           new Image(),
-        ]
+        ],
       }),
     }
   },
@@ -218,32 +222,59 @@ export default {
         content: this.imageFilter(this.content),
         slug: this.postName + '5',
       }
-      console.log(data.content)
-      const response = this.$axios.$post(`http://localhost:5000/api/posts`,data)
+      const response = this.$axios.$post(
+        `http://localhost:5000/api/posts`,
+        data
+      )
+
+      return response
     },
 
     showImagePrompt(command) {
       let src = prompt('Enter the url of your image here')
       if (src !== null) {
-        command({ src})
+        command({ src })
       }
     },
 
-    imageFilter(data){
+    imageFilter(data) {
       return data.replace('<img ', '<img width="100%" ')
-    }
+    },
   },
 }
 </script>
 <style lang="scss" scoped>
+.input-box, label, input{
+  display: block;
+  width: 100%;
+}
+
+.editor {
+  margin: 1rem auto;
+}
+
 .editor__content {
+  margin-top: 1rem auto ;
   background-color: var(--color-trix-editor);
   color: black;
+  min-height: 10rem;
+}
+
+p {
+  margin: 1rem 0 1rem 0;
 }
 
 button {
   box-shadow: none;
   background-color: var(--color-trix-editor);
   border: none;
+}
+
+.menubar__button.is-active {
+  background-color: red;
+}
+
+.menubar__button:hover {
+  background-color: aliceblue;
 }
 </style>

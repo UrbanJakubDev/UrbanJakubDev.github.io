@@ -51,11 +51,19 @@ export default {
 
 <style lang="scss" scoped>
 
-  article, p{
-    width: 100%
+  article{
+    width: 100%;
+    margin: 2rem auto 3rem auto;
   }
 
+  p{
+    margin-top: 2rem !important;
+  }
 
+  figure{
+    margin: 0;
+    width: 100%;
+  }
 
   img{
     width: 60%;
