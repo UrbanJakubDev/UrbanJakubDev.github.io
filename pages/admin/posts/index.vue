@@ -16,6 +16,7 @@
 <script>
 import axios from 'axios'
 export default {
+  middleware: 'auth',
   layout: 'admin',
   data() {
     return {

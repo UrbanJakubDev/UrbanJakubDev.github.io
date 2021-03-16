@@ -24,7 +24,7 @@ import moment from 'moment'
 export default {
   props: {
     postList: {
-      type: Object,
+      type: Array,
       default: {},
     },
   },

@@ -166,6 +166,7 @@ import {
   Image,
 } from 'tiptap-extensions'
 export default {
+  middleware: 'auth',
   layout: 'admin',
   components: {
     EditorContent,

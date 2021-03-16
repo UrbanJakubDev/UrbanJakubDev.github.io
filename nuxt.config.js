@@ -54,11 +54,39 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/style-resources',
+    '@nuxtjs/auth'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseURL: 'http://localhost:5000/api/',
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'accessToken',
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: '/auth/login', method: 'post' },
+          //logout: { url: '/auth/logout', method: 'post' },
+          user: false
+        },
+        redirect: {
+          login: '/login',
+          logout: '/',
+          callback: '/login',
+          home: '/admin/dashboard'
+        }
+      }
+    }
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

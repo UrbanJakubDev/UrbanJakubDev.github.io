@@ -1,16 +1,16 @@
 <template>
   <div class='login_container box-shadow neumorphism'>
     <h3>Please login</h3>
-    <form action='#' class='login_form'>
+    <form method="post" @submit.prevent="login" class='login_form'>
       <div class='input-box'>
         <i class='fas fa-user'></i>
-        <label for='username'></label>
-        <input id='username' type='text' placeholder='Username' />
+        <label for='email'></label>
+        <input id='email' type='text' placeholder='Email' v-model="email"/>
       </div>
       <div class='input-box'>
         <i class='fas fa-unlock'></i>
         <label for='pass'></label>
-        <input id='pass' type='text' placeholder='Password' />
+        <input id='pass' type='text' placeholder='Password' v-model="password" />
       </div>
 
       <button class='' type='submit'>Login</button>
@@ -20,7 +20,30 @@
 
 <script>
 export default {
-  layout: 'login'
+  layout: 'login',
+  data() {
+    return {
+      email: '',
+      password: '',
+      error: null
+    }
+  },
+  methods: {
+    async login() {
+      try {
+        await this.$auth.loginWith('local', {
+          data: {
+          email: this.email,
+          password: this.password
+          }
+        })
+
+        this.$router.push('/admin/dashboard')
+      } catch (e) {
+        this.error = e.response.data.message
+      }
+    }
+  }
 }
 </script>
 

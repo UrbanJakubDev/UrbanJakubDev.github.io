@@ -4,6 +4,7 @@
     <div class="nav__links">
       <NuxtLink to="/admin/dashboard">Dashboard</NuxtLink>
       <NuxtLink to="/admin/posts">Posts</NuxtLink>
+      <a @click="logout">Logout</a>
     </div>
   </div>
 </template>
@@ -15,6 +16,11 @@ export default {
       isActive: false,
       menuIcon: 'menu',
     }
+  },
+  methods: {
+    async logout() {
+      await this.$auth.logout();
+    },
   },
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="content__container">
+    <span v-if="isAuthenticated">Welcome {{ loggedInUser.username }}</span>
     <div class="card-list">
       <Card />
       <Card />
@@ -12,7 +13,9 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters } from 'vuex'
 export default {
+  middleware: 'auth',
   layout: 'admin',
   data() {
     return {
@@ -39,6 +42,9 @@ export default {
         .catch(console.error())
     },
   },
+  computed: {
+    ...mapGetters(['isAuthenticated', 'loggedInUser'])
+  }
 }
 </script>
 
