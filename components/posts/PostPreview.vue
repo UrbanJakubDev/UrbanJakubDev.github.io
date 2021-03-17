@@ -28,9 +28,16 @@
 <style lang="scss" scoped>
 .post-preview-container{
   margin: 3rem auto;
-  border-bottom: 2px dotted gray;
   display: flex;
-  background-color: dimgrey;
+
+
+  a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+  }
+
 }
 
 .tags{
