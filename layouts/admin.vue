@@ -1,27 +1,29 @@
 <template>
-  <div class="admin_layout page_container">
-    <header class="page_header">
+  <div class='admin_layout page_container'>
+    <header class='page_header'>
       <Logo />
       <ThemeMod />
-      </header>
-      <div class="base_page">
-          <AdminNavigation />
-          <Nuxt class="page_content" />
-      </div>
-    <footer><Footer /></footer>
+    </header>
+    <div class='page_body'>
+      <AdminNavigation />
+      <Nuxt class='page_content' />
     </div>
+    <footer>
+      <Footer />
+    </footer>
+  </div>
 </template>
 
 <script>
-import style from '../assets/styles/style.scss'
 export default {}
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 
-.logo{
+.logo {
   font-size: 1rem;
 }
+
 .page_header {
   //background-color: var(--color-header-bg);
   position: sticky;
@@ -35,16 +37,16 @@ export default {}
   align-items: center;
 }
 
-.base_page {
-
-  max-width: 1700px;
+.page_body {
+  margin: 2rem auto;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
 }
 
-.admin__navigation{
+.admin__navigation {
   width: 30%;
 }
 

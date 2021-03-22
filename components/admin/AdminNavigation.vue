@@ -19,7 +19,9 @@ export default {
   },
   methods: {
     async logout() {
-      await this.$auth.logout();
+      this.$auth.setToken(false)
+      this.$axios.setHeader('Authorization', false)
+      await this.$auth.logout()
     },
   },
 }
@@ -29,10 +31,11 @@ export default {
 .admin__navigation__container {
   display: flex;
   flex-direction: column;
-
+  font-size: 1.3rem;
 }
 
-h4{
+h4 {
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -41,16 +44,22 @@ h4{
   flex-direction: column;
 }
 
-a{
+a {
   text-decoration: none;
 
-  &::before{
-    content: '> ';
+  &::before {
+    content: '< ';
     font-size: 1.3em;
-    font-weight: bold;
+    font-weight: 500;
     color: var(--color-text-secondary);
   }
+  &:hover {
+    &::after {
+      content: ' />';
+      font-size: 1.3em;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+  }
 }
-
-
 </style>
