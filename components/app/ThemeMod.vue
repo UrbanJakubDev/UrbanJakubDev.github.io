@@ -1,7 +1,7 @@
 <template>
   <div
     id="nav-theme"
-    class="material-icons medium icon-theme"
+    class="material-icons small icon-theme"
     @click="changeTheme()"
   >
     {{ themeIcon }}

@@ -38,18 +38,22 @@ export default {}
 }
 
 a {
-  transition: all .15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   text-align: center;
-  border-bottom: 2px solid var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-text-secondary);
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 33%;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: bold;
   text-decoration: none;
 
   &:hover {
     box-shadow: inset 0 -3.25em 0 0 var(--color-text-secondary);
+  }
+
+  .nuxt-link-active {
+    background-color: hotpink;
   }
 }
 

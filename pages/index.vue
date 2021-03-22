@@ -1,7 +1,7 @@
 <template>
-  <div class="content__container">
-    <div class="landing__page">
-      <section class="portfolio">
+  <div class='content__container'>
+    <div class='landing__page'>
+      <section class='portfolio'>
         <h2>Kodér, Programátor, Tech lover</h2>
         <p>
           Programátor, Kodér, UI/UX designer samouk, Tech lover a nadšenec do
@@ -17,42 +17,45 @@
         </NuxtLink>
       </div> -->
 
-      <section class="social">
-        <a href=""><i class="fab fa-github"></i></a>
-        <a href=""><i class="fab fa-linkedin"></i></a>
-        <a href=""><i class="fab fa-dribbble"></i></a>
-        <a href=""><i class="fab fa-instagram"></i></a>
+      <section class='social'>
+        <a href=''><i class='fab fa-github'></i></a>
+        <a href=''><i class='fab fa-linkedin'></i></a>
+        <a href=''><i class='fab fa-dribbble'></i></a>
+        <a href=''><i class='fab fa-instagram'></i></a>
       </section>
     </div>
   </div>
 </template>
 
 <script>
-import Icon from '../assets/icons/github.svg'
+
 export default {
   layout: 'default',
   data() {
-    return {
-    }
-  },
+    return {}
+  }
 }
 </script>
 
-<style lang="scss">
+<style lang='scss'>
 .social {
   .fab {
     font-size: 5rem;
     margin-right: 1.5rem;
   }
+
   .fa-github {
     color: var(--color-text-primary);
   }
+
   .fa-dribbble {
-    color: #ea4c89 ;
+    color: #ea4c89;
   }
+
   .fa-linkedin {
     color: #0077b5;
   }
+
   .fa-instagram {
     color: #e4405f;
   }
