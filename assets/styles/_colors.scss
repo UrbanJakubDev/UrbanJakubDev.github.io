@@ -2,6 +2,8 @@
   @return mix(black, $color, $percentage);
 }
 
+// TODO: Do some color schemas
+
 //Light schemes
 $light-primary-color: rgba(42, 42, 43, 100%);
 $light-secondary-color: hotpink;
@@ -20,9 +22,9 @@ $light-trix-editor: rgba(247, 247, 246, 100%);
 
 $dark-primary-color: rgb(201, 201, 201);
 $dark-secondary-color: hotpink;
-$dark-body-bg-color: #282c39;
-$dark-header-bg-color: rgba(39, 43, 56, 0.7);
-$dark-card-bg-color: rgb(52, 56, 68);
+$dark-body-bg-color: rgb(40, 40, 70);
+$dark-header-bg-color: rgba(40, 40, 70, 0.7);
+$dark-card-bg-color: rgba(35, 35, 67, 0.7);
 $dark-card-bg-preview-color: rgb(204, 204, 204);
 $dark-shade-value: 15%;
 $dark-btn-color: rgb(82, 82, 82);
@@ -55,13 +57,14 @@ $dark-trix-editor: rgba(247, 247, 246, 0.829);
   --color-logo-shadow: #{shade($dark-body-bg-color, 10%)};
 
   //Cards
-  --color-card-bg: #{$dark-card-bg-color};
+  //--color-card-bg: #{$dark-card-bg-color};
+  --color-card-bg: #{darken($dark-card-bg-color, 5%)};
   --color-card-border: #{shade($dark-card-bg-color, 10%)};
   --color-card-shadow: #{shade($dark-card-bg-color, 20%)};
   --color-card-shadow-hover: #{shade($dark-card-bg-color, 35%)};
 
   // Card preview
-  --color-card-preview-bg: #{shade($dark-card-bg-preview-color, 5%)};
+  --color-card-preview-bg: #{shade($dark-card-bg-preview-color, 50%)};
 
   // Links
   --color-link: #{$dark-primary-color};
@@ -72,7 +75,7 @@ $dark-trix-editor: rgba(247, 247, 246, 0.829);
 
   // Buttons
   --color-btn: #{$dark-btn-color};
-  --color-btn-grad: #{shade($dark-btn-color,20%)};
+  --color-btn-grad: #{shade($dark-btn-color, 20%)};
   --color-btn-hover: #{$dark-btn-hover-color};
 
   --color-trix-editor: #{$dark-trix-editor};

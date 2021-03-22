@@ -30,7 +30,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 70.5%;
+  font-size: 62.5%;
 }
 
 *,
@@ -60,7 +60,7 @@ section {
 }
 
 body {
-  font-size: 1.5 em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
@@ -68,9 +68,8 @@ body {
   background-color: var(--color-body-bg);
 }
 
-
-.page_body,
-.page_body{
+.page-header,
+.page_body {
   max-width: 700px;
 }
 
@@ -96,34 +95,40 @@ h6 {
   margin-bottom: 2rem;
   font-weight: 300;
 }
+
 h1 {
   font-size: 1.9rem;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.1rem;
 }
+
 h2 {
   font-size: 1.8rem;
   line-height: 1.25;
   letter-spacing: -0.1rem;
 }
+
 h3 {
   font-size: 1.4rem;
   line-height: 1.3;
   letter-spacing: -0.1rem;
 }
+
 h4 {
   font-size: 1.2rem;
   line-height: 1.35;
   letter-spacing: -0.08rem;
 }
+
 h5 {
   font-size: 0.6rem;
   line-height: 1.5;
   letter-spacing: -0.05rem;
 }
+
 h6 {
-  font-size: .6rem;
+  font-size: 0.6rem;
   line-height: 1.6;
   letter-spacing: 0;
 }
@@ -198,6 +203,7 @@ code {
   border: 1px solid #e1e1e1;
   border-radius: 4px;
 }
+
 pre > code {
   display: block;
   padding: 1rem 1.5rem;
@@ -222,19 +228,24 @@ blockquote {
     float: left;
     margin-right: 15px;
   }
+
   &.right {
     float: right;
     margin-left: 15px;
   }
+
   &.tiny {
     font-size: 1rem;
   }
+
   &.small {
-    font-size: 2rem;
+    font-size: 2.6rem;
   }
+
   &.medium {
     font-size: 3.3rem;
   }
+
   &.large {
     font-size: 6rem;
   }
@@ -249,13 +260,28 @@ hr {
   border-top: 1px solid #e1e1e1;
 }
 
-img{
+// Images
+img {
   max-width: 50rem;
   width: 100%;
   height: auto;
 }
 
-figure{
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  img {
+    width: 80%;
+  }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  img {
+    width: 50%;
+  }
+}
+
+figure {
   margin: 0;
   width: 100%;
 }
@@ -310,9 +336,11 @@ video.responsive-video {
 .left-align {
   text-align: left;
 }
+
 .right-align {
   text-align: right;
 }
+
 .center,
 .center-align {
   text-align: center;
@@ -321,6 +349,7 @@ video.responsive-video {
 .left {
   float: left !important;
 }
+
 .right {
   float: right !important;
 }
@@ -351,19 +380,19 @@ video.responsive-video {
   padding: 0 !important;
 }
 
-.box-shadow{
+.box-shadow {
   box-shadow: 3px 3px 10px var(--color-card-shadow);
 }
 
-.box-shadow-hover{
+.box-shadow-hover {
   box-shadow: 3px 3px 10px var(--color-card-shadow);
 
-  &:hover{
+  &:hover {
     box-shadow: 8px 8px 10px var(--color-card-shadow-hover);
   }
 }
 
-.neumorphism{
+.neumorphism {
   border-radius: 10px;
   background: linear-gradient(
     145deg,
@@ -386,15 +415,13 @@ video.responsive-video {
   clear: both;
 }
 
-
 // TODO: smazat
-.post-preview-container{
-  a{
+.post-preview-container {
+  a {
     background-color: lighten(#282c3a, 3%);
     box-shadow: 3px 3px 10px darken(#282c3a, 5%);
-    border-radius: .3rem;
+    border-radius: 0.3rem;
   }
-
 }
 
 /* Media Queries
@@ -406,15 +433,12 @@ video.responsive-video {
   there.
   */
 
-/* Larger than mobile */
-@media (min-width: 400px) {
+/* Larger than small mobile */
+@media (min-width: 320px) {
 }
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
-  img{
-    width: 80%;
-  }
 }
 
 /* Larger than tablet */
@@ -423,24 +447,17 @@ video.responsive-video {
   .page_body {
     max-width: 800px;
   }
-  img{
-    width: 50%;
-  }
 }
 
 /* Larger than desktop */
 @media (min-width: 1000px) {
-
-  html{
-    font-size: 85%;
-
+  html {
+    font-size: 70%;
   }
-
 }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
-
 }
 
 /* Larger than Desktop HD */
