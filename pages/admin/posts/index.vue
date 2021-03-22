@@ -6,7 +6,10 @@
       <Card />
       <Card />
     </div>
-    <PostsTab :postList='postList' />
+    <PostsTab :postList='postList'
+              v-on:deletePost='deletePost'
+              v-on:editPost='editPost'
+    />
 
     <NuxtLink :to="{ name: 'admin-post-create' }" class='btn'>Create TipTap</NuxtLink>
   </div>
@@ -41,6 +44,18 @@ export default {
           this.postList = response.data
         })
         .catch(console.error())
+    },
+    editPost(id) {
+      console.log(id)
+    },
+    deletePost(id) {
+      this.$axios.$delete(`posts/${id}`).then(
+        (response) => {
+          this.getAllPosts()
+        }
+      ).catch((e) => {
+        $nuxt.error({ statusCode: '403' })
+      })
     }
   }
 }
