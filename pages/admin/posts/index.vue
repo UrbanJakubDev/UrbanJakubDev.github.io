@@ -1,32 +1,32 @@
 <template>
-  <div class="content__container">
-    <div class="card-list">
+  <div class='content__container'>
+    <div class='card-list'>
       <Card />
       <Card />
       <Card />
       <Card />
     </div>
-    <PostsTab :postList="postList" />
+    <PostsTab :postList='postList' />
 
-    <NuxtLink :to="{ name: 'admin-post-creatett' }" class="btn">Create TipTap</NuxtLink>
-    <NuxtLink :to="{ name: 'admin-post-create' }" class="btn">Create Trix</NuxtLink>
+    <NuxtLink :to="{ name: 'admin-post-create' }" class='btn'>Create TipTap</NuxtLink>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+
 export default {
   middleware: 'auth',
   layout: 'admin',
   data() {
     return {
       title: 'Postts',
-      postList: [],
+      postList: []
     }
   },
   head() {
     return {
-      title: this.title,
+      title: this.title
     }
   },
   mounted() {
@@ -41,17 +41,17 @@ export default {
           this.postList = response.data
         })
         .catch(console.error())
-    },
-  },
+    }
+  }
 }
 </script>
 
-<style lang="scss" scoped>
-.card-list{
+<style lang='scss' scoped>
+.card-list {
   display: flex;
 }
 
-figure{
+figure {
   width: 90%;
 }
 </style>

@@ -1,92 +1,289 @@
 <template>
-  <div>
-    <form action="#" id="postForm" method="post" @submit.prevent="checkForm">
-      <div class="input-box">
+  <div class="page__content">
+    <div>
+      <div class="input-box title">
         <label for="name">Nazev postu</label>
-        <input type="text" id="name" v-model="postName" />
+        <input id="name" v-model="postName" type="text" />
+      </div>
+      <div class="input-box tags">
+        <label for="skills">Skills</label>
+        <input id="skills" v-model="postTags" type="text" />
       </div>
 
-      <div class="trix">
-        <VueTrix
-          inputId="editor1"
-          v-model="editorContent"
-          placeholder="enter your content..."
-          @trix-attachment-add="handleAttachmentChanges"
-        />
+      <div class="editor">
+        <editor-menu-bar v-slot="{ commands, isActive }" :editor="editor">
+          <div class="menubar">
+            <div class="row">
+              <button
+                :class="{ 'is-active': isActive.bold() }"
+                class="menubar__button"
+                @click="commands.bold"
+              >
+                B
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.italic() }"
+                class="menubar__button"
+                @click="commands.italic"
+              >
+                I
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.strike() }"
+                class="menubar__button"
+                @click="commands.strike"
+              >
+                S
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.underline() }"
+                class="menubar__button"
+                @click="commands.underline"
+              >
+                U
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.code() }"
+                class="menubar__button"
+                @click="commands.code"
+              >
+                code
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.paragraph() }"
+                class="menubar__button"
+                @click="commands.paragraph"
+              >
+                p
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                class="menubar__button"
+                @click="commands.heading({ level: 1 })"
+              >
+                H1
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                class="menubar__button"
+                @click="commands.heading({ level: 2 })"
+              >
+                H2
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                class="menubar__button"
+                @click="commands.heading({ level: 3 })"
+              >
+                H3
+              </button>
+            </div>
+            <div class="row">
+              <button
+                :class="{ 'is-active': isActive.bullet_list() }"
+                class="menubar__button"
+                @click="commands.bullet_list"
+              >
+                ul
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.ordered_list() }"
+                class="menubar__button"
+                @click="commands.ordered_list"
+              >
+                ol
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.blockquote() }"
+                class="menubar__button"
+                @click="commands.blockquote"
+              >
+                "
+              </button>
+
+              <button
+                :class="{ 'is-active': isActive.code_block() }"
+                class="menubar__button"
+                @click="commands.code_block"
+              >
+                code block
+              </button>
+
+              <button
+                class="menubar__button"
+                @click="showImagePrompt(commands.image)"
+              >
+                img
+              </button>
+
+              <button class="menubar__button" @click="commands.horizontal_rule">
+                hr
+              </button>
+            </div>
+            <div class="row">
+              <button class="menubar__button" @click="commands.undo"><-</button>
+
+              <button class="menubar__button" @click="commands.redo">-></button>
+            </div>
+          </div>
+        </editor-menu-bar>
+
+        <editor-content :editor="editor" class="editor__content" />
       </div>
       <p>
-        <button class="btn" type="submit">Odeslat</button>
+        <a class="btn" @click.prevent="SendPost">Odeslat</a>
       </p>
-    </form>
+    </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import VueTrix from 'vue-trix'
+import { Editor, EditorContent, EditorMenuBar } from "tiptap";
+import {
+  Blockquote,
+  Bold,
+  BulletList,
+  Code,
+  CodeBlock,
+  HardBreak,
+  Heading,
+  History,
+  HorizontalRule,
+  Image,
+  Italic,
+  Link,
+  ListItem,
+  OrderedList,
+  Strike,
+  TodoItem,
+  TodoList,
+  Underline
+} from "tiptap-extensions";
 
 export default {
-  name: 'TrixCreatePage',
-  components: {
-    VueTrix,
-  },
+  middleware: 'auth',
   layout: 'admin',
-  data() {
-    return {
-      editorContent: '<h1>Editor contents</h1>',
-      title: 'Posts Crete',
-      postName: null,
-    }
+  components: {
+    EditorContent,
+    EditorMenuBar,
   },
   head() {
     return {
       title: this.title,
     }
   },
+  data() {
+    return {
+      title: 'Posts Create',
+      html: '',
+      content: '',
+      postName: null,
+      postTags: null,
+      editor: new Editor({
+        onUpdate: ({ getHTML }) => {
+          this.html = getHTML()
+          if (this.html === '<p></p>') this.content = ''
+          else this.content = this.html
+        },
+        extensions: [
+          new Blockquote(),
+          new BulletList(),
+          new CodeBlock(),
+          new HardBreak(),
+          new Heading({ levels: [1, 2, 3] }),
+          new HorizontalRule(),
+          new ListItem(),
+          new OrderedList(),
+          new TodoItem(),
+          new TodoList(),
+          new Link(),
+          new Bold(),
+          new Code(),
+          new Italic(),
+          new Strike(),
+          new Underline(),
+          new History(),
+          new Image(),
+        ],
+      }),
+    }
+  },
+  beforeDestroy() {
+    this.editor.destroy()
+  },
   methods: {
-    checkForm(e) {
+    SendPost() {
+      console.log(this.content)
       let data = {
         title: this.postName,
-        content: this.editorContent,
+        content: this.imageFilter(this.content),
         slug: this.postName + '5',
+        tags: this.postTags,
       }
-
-      const response = this.$axios.$post(`/posts`, data)
-      e.preventDefault()
+      // this.$axios.setToken(this.$store.$auth.$storage._state['_token.local'])
+      return this.$axios.$post(
+        `http://localhost:5000/api/posts`,
+        data
+      )
     },
 
-    handleAttachmentChanges(event) {
-      // 1. get file object
-      let file = event.attachment.file
-      const remoteHost = 'http://localhost:5000/api/attachments/upload'
+    showImagePrompt(command) {
+      let src = prompt('Enter the url of your image here')
+      if (src !== null) {
+        command({ src })
+      }
+    },
 
-      // 2. upload file to remote server with FormData
-      let formData = new FormData()
-      formData.append('file', file)
-      this.$axios.$post(`/attachments/upload`, formData).then((data) => {
-        // 3. if upload success, set back the attachment's URL attribute
-        // @param object data from remote server response data after upload.
-        console.log(data)
-        let attributes = {
-          url: data.result.secure_url,
-          href: data.result.secure_url,
-        }
-        event.attachment.setAttributes(attributes)
-      })
+    imageFilter(data) {
+      return data.replace('<img ', '<img width="100%" ')
     },
   },
 }
 </script>
-
 <style lang="scss" scoped>
-.trix {
+.input-box,
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+.editor {
+  margin: 1rem auto;
+}
+
+.editor__content {
+  margin-top: 1rem;
   background-color: var(--color-trix-editor);
   color: black;
+  min-height: 10rem;
+}
+
+p {
+  margin: 1rem 0 1rem 0;
 }
 
 button {
   box-shadow: none;
   background-color: var(--color-trix-editor);
   border: none;
+}
+
+.menubar__button.is-active {
+  background-color: red;
+}
+
+.menubar__button:hover {
+  background-color: aliceblue;
 }
 </style>

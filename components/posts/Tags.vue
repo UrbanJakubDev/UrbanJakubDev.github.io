@@ -2,13 +2,7 @@
   <div class="tag-wrapper">
     <div class="tag-list">
       <span>Skills:</span>
-      <span
-        v-for="tag in tags"
-        :key="tag.id"
-        class="badge"
-        v-bind:class="[tag.value.toLowerCase()]"
-        >{{ tag.value }}</span
-      >
+      <span> {{ tags }}</span>
     </div>
   </div>
 </template>
@@ -17,16 +11,16 @@
 export default {
   data() {
     return {
-      badgeClass: '',
-    }
+      badgeClass: ""
+    };
   },
   props: {
     tags: {
-      type: Object,
-      default: {},
-    },
-  },
-}
+      type: String,
+      default: ''
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

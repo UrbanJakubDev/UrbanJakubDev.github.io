@@ -38,6 +38,11 @@ export default {
 
 <style lang="scss" scoped>
 .table-wrapper {
+  width: 100%;
   margin: 5rem auto;
+
+  table{
+    width: 100%;
+  }
 }
 </style>
