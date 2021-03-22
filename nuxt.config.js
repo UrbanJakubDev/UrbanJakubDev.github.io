@@ -11,7 +11,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'webdev portfolio', name: 'Personal portfolio web development', content: 'web development, coding, portfolio, programátor, kodér' },
+      {
+        hid: 'webdev portfolio',
+        name: 'Personal portfolio web development',
+        content: 'web development, coding, portfolio, programátor, kodér',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'static/favicon.ico' },
@@ -54,7 +58,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/style-resources',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -67,8 +71,10 @@ export default {
       local: {
         token: {
           property: 'accessToken',
-          // required: true,
-          // type: 'Bearer'
+          type: 'Bearer',
+          required: true,
+          maxAge: 1800,
+          autoLogout: true,
         },
         user: {
           property: 'user',
@@ -76,17 +82,17 @@ export default {
         },
         endpoints: {
           login: { url: '/auth/login', method: 'post' },
-          //logout: { url: '/auth/logout', method: 'post' },
-          user: false
+          logout: { url: '/auth/logout', method: 'post' },
+          user: false,
         },
         redirect: {
           login: '/login',
           logout: '/',
           callback: '/login',
-          home: '/admin/dashboard'
-        }
-      }
-    }
+          home: '/admin/dashboard',
+        },
+      },
+    },
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
@@ -98,5 +104,5 @@ export default {
   server: {
     port: 8000, // default: 3000
     host: '0.0.0.0', // default: localhost
-  },   // other configs
+  }, // other configs
 }

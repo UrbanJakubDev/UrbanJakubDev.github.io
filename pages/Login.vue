@@ -1,16 +1,16 @@
 <template>
   <div class='login_container box-shadow neumorphism'>
     <h3>Please login</h3>
-    <form method="post" @submit.prevent="login" class='login_form'>
+    <form class='login_form' method='post' @submit.prevent='loginNew'>
       <div class='input-box'>
         <i class='fas fa-user'></i>
         <label for='email'></label>
-        <input id='email' type='text' placeholder='Email' v-model="email"/>
+        <input id='email' v-model='email' placeholder='Email' type='text' />
       </div>
       <div class='input-box'>
         <i class='fas fa-unlock'></i>
         <label for='pass'></label>
-        <input id='pass' type='text' placeholder='Password' v-model="password" />
+        <input id='pass' v-model='password' placeholder='Password' type='password' />
       </div>
 
       <button class='' type='submit'>Login</button>
@@ -29,19 +29,22 @@ export default {
     }
   },
   methods: {
-    async login() {
-      try {
-        await this.$auth.loginWith('local', {
-          data: {
+    loginNew(){
+      this.$auth.loginWith('local', {
+        data: {
           email: this.email,
           password: this.password
-          }
-        })
-
-        this.$router.push('/admin/dashboard')
-      } catch (e) {
+        }
+      }).then((response)=> {
+        console.log(response.data)
+        let token = response.data.accessToken
+        let user = response.data.userData
+        this.$auth.setUserToken(token)
+        this.$axios.setToken(token)
+        this.$auth.setUser(user)
+      }).catch((e)=>{
         this.error = e.response.data.message
-      }
+      })
     }
   }
 }
@@ -81,7 +84,6 @@ button {
   margin-top: 1rem;
   padding: 1.2rem;
   color: var(--color-text-primary);
-  border: none;
   transition: all 0.1s ease-in-out;
   background: transparent;
   border: 2px solid var(--color-text-secondary);
@@ -100,6 +102,8 @@ input {
   background-color: transparent;
   border: none;
   color: var(--color-text-secondary);
+
+
 
   &:focus {
     outline: none;
