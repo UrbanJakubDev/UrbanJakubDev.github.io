@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002FUrbanJakubDev.github.io\u002F_nuxt\u002Fstatic\u002F1616491065",layout:"login",error:a,state:{auth:{user:a,loggedIn:false,strategy:"local"}},serverRendered:true,routePath:"\u002FLogin",config:{content:{dbHash:"b25b294c"}}}}(null));
