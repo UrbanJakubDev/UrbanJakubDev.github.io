@@ -1,7 +1,7 @@
 <template>
   <div>
     <span
-      >Created <NuxtLink to="/contact">This</NuxtLink> with 🖤 and
+      >Created <NuxtLink to="/">This</NuxtLink> with 🖤 and
       <a class="vue-link" href="https://v3.vuejs.org/"><i class="fab fa-vuejs"></i></a> &
       <a class="vue-link" href="https://v3.vuejs.org/">Nuxt.js</a></span
     >
