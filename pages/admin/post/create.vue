@@ -1,154 +1,154 @@
 <template>
-  <div class="page__content">
+  <div class='page__content'>
     <div>
-      <div class="input-box title">
-        <label for="name">Nazev postu</label>
-        <input id="name" v-model="postName" type="text" />
+      <div class='input-box title'>
+        <label for='name'>Nazev postu</label>
+        <input id='name' v-model='postName' type='text' />
       </div>
-      <div class="input-box tags">
-        <label for="skills">Skills</label>
-        <input id="skills" v-model="postTags" type="text" />
+      <div class='input-box tags'>
+        <label for='skills'>Skills</label>
+        <input id='skills' v-model='postTags' type='text' />
       </div>
 
-      <div class="editor">
-        <editor-menu-bar v-slot="{ commands, isActive }" :editor="editor">
-          <div class="menubar">
-            <div class="row">
+      <div class='editor'>
+        <editor-menu-bar v-slot='{ commands, isActive }' :editor='editor'>
+          <div class='menubar'>
+            <div class='row'>
               <button
                 :class="{ 'is-active': isActive.bold() }"
-                class="menubar__button"
-                @click="commands.bold"
+                class='menubar__button'
+                @click='commands.bold'
               >
                 B
               </button>
 
               <button
                 :class="{ 'is-active': isActive.italic() }"
-                class="menubar__button"
-                @click="commands.italic"
+                class='menubar__button'
+                @click='commands.italic'
               >
                 I
               </button>
 
               <button
                 :class="{ 'is-active': isActive.strike() }"
-                class="menubar__button"
-                @click="commands.strike"
+                class='menubar__button'
+                @click='commands.strike'
               >
                 S
               </button>
 
               <button
                 :class="{ 'is-active': isActive.underline() }"
-                class="menubar__button"
-                @click="commands.underline"
+                class='menubar__button'
+                @click='commands.underline'
               >
                 U
               </button>
 
               <button
                 :class="{ 'is-active': isActive.code() }"
-                class="menubar__button"
-                @click="commands.code"
+                class='menubar__button'
+                @click='commands.code'
               >
                 code
               </button>
 
               <button
                 :class="{ 'is-active': isActive.paragraph() }"
-                class="menubar__button"
-                @click="commands.paragraph"
+                class='menubar__button'
+                @click='commands.paragraph'
               >
                 p
               </button>
 
               <button
                 :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-                class="menubar__button"
-                @click="commands.heading({ level: 1 })"
+                class='menubar__button'
+                @click='commands.heading({ level: 1 })'
               >
                 H1
               </button>
 
               <button
                 :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-                class="menubar__button"
-                @click="commands.heading({ level: 2 })"
+                class='menubar__button'
+                @click='commands.heading({ level: 2 })'
               >
                 H2
               </button>
 
               <button
                 :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-                class="menubar__button"
-                @click="commands.heading({ level: 3 })"
+                class='menubar__button'
+                @click='commands.heading({ level: 3 })'
               >
                 H3
               </button>
             </div>
-            <div class="row">
+            <div class='row'>
               <button
                 :class="{ 'is-active': isActive.bullet_list() }"
-                class="menubar__button"
-                @click="commands.bullet_list"
+                class='menubar__button'
+                @click='commands.bullet_list'
               >
                 ul
               </button>
 
               <button
                 :class="{ 'is-active': isActive.ordered_list() }"
-                class="menubar__button"
-                @click="commands.ordered_list"
+                class='menubar__button'
+                @click='commands.ordered_list'
               >
                 ol
               </button>
 
               <button
                 :class="{ 'is-active': isActive.blockquote() }"
-                class="menubar__button"
-                @click="commands.blockquote"
+                class='menubar__button'
+                @click='commands.blockquote'
               >
                 "
               </button>
 
               <button
                 :class="{ 'is-active': isActive.code_block() }"
-                class="menubar__button"
-                @click="commands.code_block"
+                class='menubar__button'
+                @click='commands.code_block'
               >
                 code block
               </button>
 
               <button
-                class="menubar__button"
-                @click="showImagePrompt(commands.image)"
+                class='menubar__button'
+                @click='showImagePrompt(commands.image)'
               >
                 img
               </button>
 
-              <button class="menubar__button" @click="commands.horizontal_rule">
+              <button class='menubar__button' @click='commands.horizontal_rule'>
                 hr
               </button>
             </div>
-            <div class="row">
-              <button class="menubar__button" @click="commands.undo"><-</button>
+            <div class='row'>
+              <button class='menubar__button' @click='commands.undo'><-</button>
 
-              <button class="menubar__button" @click="commands.redo">-></button>
+              <button class='menubar__button' @click='commands.redo'>-></button>
             </div>
           </div>
         </editor-menu-bar>
 
-        <editor-content :editor="editor" class="editor__content" />
+        <editor-content :editor='editor' class='editor__content' />
       </div>
       <p>
-        <a class="btn" @click.prevent="SendPost">Odeslat</a>
+        <a class='btn' @click.prevent='SendPost'>Odeslat</a>
       </p>
     </div>
   </div>
 </template>
 
 <script>
-import { Editor, EditorContent, EditorMenuBar } from "tiptap";
+import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
 import {
   Blockquote,
   Bold,
@@ -168,18 +168,18 @@ import {
   TodoItem,
   TodoList,
   Underline
-} from "tiptap-extensions";
+} from 'tiptap-extensions'
 
 export default {
   middleware: 'auth',
   layout: 'admin',
   components: {
     EditorContent,
-    EditorMenuBar,
+    EditorMenuBar
   },
   head() {
     return {
-      title: this.title,
+      title: this.title
     }
   },
   data() {
@@ -213,9 +213,9 @@ export default {
           new Strike(),
           new Underline(),
           new History(),
-          new Image(),
-        ],
-      }),
+          new Image()
+        ]
+      })
     }
   },
   beforeDestroy() {
@@ -228,13 +228,12 @@ export default {
         title: this.postName,
         content: this.imageFilter(this.content),
         slug: this.postName + '5',
-        tags: this.postTags,
+        tags: this.postTags
       }
       // this.$axios.setToken(this.$store.$auth.$storage._state['_token.local'])
-      return this.$axios.$post(
-        `http://localhost:5000/api/posts`,
-        data
-      )
+      this.$axios.$post(`/posts`, data).then(
+        (response) => {
+        })
     },
 
     showImagePrompt(command) {
@@ -246,11 +245,11 @@ export default {
 
     imageFilter(data) {
       return data.replace('<img ', '<img width="100%" ')
-    },
-  },
+    }
+  }
 }
 </script>
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 .input-box,
 label,
 input {
