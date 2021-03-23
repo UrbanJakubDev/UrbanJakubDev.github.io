@@ -1,14 +1,15 @@
 <template>
-  <div class="post-preview-container">
+  <div class="post-preview-container box-shadow'">
     <NuxtLink :to="{ name: 'portfolio-slug', params: { slug: post.id }}">
-      <div class="post-header">
-        <img class="acrticle-preview-image" src="https://res.cloudinary.com/dqdmwnui6/image/upload/v1615463713/agkjhakg_nr3ibl.png" alt="">
+      <div class='post-header'>
+        <img alt=''
+             class='acrticle-preview-image' src='https://res.cloudinary.com/dqdmwnui6/image/upload/v1615463713/agkjhakg_nr3ibl.png'>
       </div>
-      <div class="post-body">
+      <div class='post-body'>
         <h3>{{ post.title }}</h3>
-        <article v-html="preview(post.content)"></article>
-        <span class="article_more">More...</span>
-        <Tags :tags="post.tags" />
+        <article v-html='preview(post.content)'></article>
+        <span class='article_more'>More...</span>
+        <Tags :tags='post.tags' />
 
       </div>
     </NuxtLink>
@@ -25,15 +26,15 @@ export default {
   },
   methods: {
     preview(content) {
-      let first_par_start = content.indexOf("<p>");
-      let first_par_end = content.indexOf("</p>");
-      return content.substring(first_par_start, first_par_end);
+      let first_par_start = content.indexOf('<p>')
+      let first_par_end = content.indexOf('</p>')
+      return content.substring(first_par_start, first_par_end)
     }
   }
-};
+}
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 .post-preview-container {
 
   margin: 3rem auto;
@@ -41,7 +42,7 @@ export default {
 
 
   .post-header {
-    margin-top: 1rem;
+    margin-top: 2rem;
     background-color: var(--color-card-preview-bg);
 
     .acrticle-preview-image {
@@ -58,6 +59,7 @@ export default {
     width: 100%;
     height: 100%;
     padding: 0 2rem;
+    box-shadow: 3px 3px 15px var(--color-card-shadow);
   }
 
 }

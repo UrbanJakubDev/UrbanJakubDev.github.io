@@ -29,7 +29,7 @@ export default {}
 .nav__links {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   text-align: center;
 }
 
@@ -41,8 +41,8 @@ a {
   transition: all 0.15s ease-in-out;
   text-align: center;
   border-bottom: 1px solid var(--color-text-secondary);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: .7rem;
+  padding-bottom: .7rem;
   width: 33%;
   font-size: 1em;
   font-weight: bold;
@@ -69,7 +69,8 @@ a {
   }
 
   a {
-    margin-right: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
     width: 100%;
     border: none;
 
@@ -84,6 +85,8 @@ a {
   }
 
   .nav-links-theme-icon {
+    font-size: 3rem;
+    margin-left: 2rem;
     display: block;
   }
 }

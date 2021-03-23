@@ -5,7 +5,7 @@
       <p>
         Kodér,programátor, UI/UX designer samouk, tech lover a nadšenec do
         automatizace a IOT. Zajímám se o novinky v oblasti vývoje webů. S
-        kodéřinou jsem začal poměrně nedávno. Proto v tuto chvíli prohlubuji své
+        Front-Endem jsem začal poměrně nedávno. Proto v tuto chvíli prohlubuji své
         znalosti a dovednosti, abych mohl v blízké budoucnosti pracovat na
         tvorbě zajímavých webů a webových aplikací.
       </p>
@@ -92,6 +92,7 @@
         <li>C – Menší projekty na platformě Arduino</li>
         <li>Figma, Photoshop (základy)</li>
       </ul>
+
     </section>
     <section class="skills">
       <h2>Absolvované kurzy</h2>

@@ -5,18 +5,18 @@
 // TODO: Do some color schemas
 
 //Light schemes
-$light-primary-color: rgba(42, 42, 43, 100%);
+$light-primary-color: rgba(42, 42, 43, 1);
 $light-secondary-color: hotpink;
 $light-body-bg-color: #f5f4f3;
 $light-header-bg-color: rgba(245, 244, 243, 0.7);
-$light-card-bg-color: rgba(247, 247, 246, 100%);
-$light-card-bg-preview-color: rgba(247, 247, 246, 100%);
+$light-card-bg-color: rgba(247, 247, 246, 1);
+$light-card-bg-preview-color: rgba(247, 247, 246, 1);
 $light-shade-value: 20%;
 $light-btn-color: rgb(211, 209, 209);
 $light-btn-hover-color: hotpink;
 $light-numorphism-first-color: #d0cfcf;
 $light-numorphism-second-color: #ffffff;
-$light-trix-editor: rgba(247, 247, 246, 100%);
+$light-trix-editor: rgba(247, 247, 246, 1);
 
 //Dark schemes
 
@@ -103,7 +103,7 @@ $dark-trix-editor: rgba(247, 247, 246, 0.829);
   //Cards
   --color-card-bg: #{$light-card-bg-color};
   --color-card-border: #{shade($light-card-bg-color, 10%)};
-  --color-card-shadow: #{shade($light-card-bg-color, 20%)};
+  --color-card-shadow: #{shade($light-card-bg-color, 15%)};
   --color-card-shadow-hover: #{shade($light-card-bg-color, 30%)};
 
   // Card preview

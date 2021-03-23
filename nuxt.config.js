@@ -63,7 +63,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:5000/api/',
+    baseURL: 'https://urbanjakubdev-server.herokuapp.com/api/',
   },
 
   auth: {
