@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a){return {staticAssetsBase:"\u002FUrbanJakubDev.github.io\u002F_nuxt\u002Fstatic\u002F1616491065",layout:"default",error:a,state:a,serverRendered:false,routePath:"\u002Fportfolio",config:{content:{dbHash:"b25b294c"}}}}(null));
