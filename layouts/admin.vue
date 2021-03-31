@@ -61,4 +61,17 @@ footer {
   text-align: center;
   background-color: var(--color-header-bg);
 }
+
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+.page_body{
+  display: flex;
+  flex-direction: row;
+}
+
+  .admin__navigation__container{
+    width: 25%;
+  }
+}
 </style>

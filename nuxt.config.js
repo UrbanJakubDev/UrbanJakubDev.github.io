@@ -1,9 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  router: {
-    base: '/UrbanJakubDev.github.io/',
-  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -66,7 +63,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://urbanjakubdev-server.herokuapp.com/api/',
+    //baseURL: 'https://urbanjakubdev-server.herokuapp.com/api/',
+    baseURL: 'http://localhost:5000/api/',
   },
 
   auth: {
@@ -80,9 +78,10 @@ export default {
           autoLogout: true,
         },
         user: {
-          property: 'user',
+          property: 'userData',
           // autoFetch: true
         },
+        watchLoggedIn: true,
         endpoints: {
           login: { url: '/auth/login', method: 'post' },
           logout: { url: '/auth/logout', method: 'post' },
@@ -92,7 +91,7 @@ export default {
           login: '/login',
           logout: '/',
           callback: '/login',
-          home: '/admin/dashboard',
+          home: '/',
         },
       },
     },

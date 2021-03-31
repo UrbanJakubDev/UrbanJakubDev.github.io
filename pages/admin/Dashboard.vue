@@ -1,6 +1,7 @@
 <template>
   <div class='content__container'>
     <span v-if='isAuthenticated'>Welcome {{ loggedInUser.name }}</span>
+    <span>{{ isAuthenticated}}</span>
     <div class='card-list'>
       <Card />
       <Card />
@@ -31,8 +32,6 @@ export default {
   },
   mounted() {
     this.getAllPosts()
-    console.log(this.$auth.user)
-    console.log(this.$auth.loggedIn)
   },
   methods: {
     getAllPosts() {

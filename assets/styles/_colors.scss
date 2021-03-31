@@ -30,8 +30,8 @@ $dark-shade-value: 15%;
 $dark-btn-color: rgb(82, 82, 82);
 $dark-btn-hover-color: hotpink;
 
-$dark-numorphism-first-color: #222530;
-$dark-numorphism-second-color: #2e3342;
+$dark-numorphism-first-color: shade($dark-body-bg-color, 10%);
+$dark-numorphism-second-color: shade($dark-numorphism-first-color, 10%);
 
 $dark-trix-editor: rgba(247, 247, 246, 0.829);
 

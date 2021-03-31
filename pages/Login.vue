@@ -1,6 +1,6 @@
 <template>
-  <div class='login_container box-shadow neumorphism'>
-    <h3>Please login</h3>
+  <div class='login_container box-shadow'>
+    <h1>Please login</h1>
     <form class='login_form' method='post' @submit.prevent='loginNew'>
       <div class='input-box'>
         <i class='fas fa-user'></i>
@@ -42,6 +42,7 @@ export default {
         this.$auth.setUserToken(token)
         this.$axios.setToken(token)
         this.$auth.setUser(user)
+        this.$router.push('admin/Dashboard')
       }).catch((e)=>{
         this.error = e.response.data.message
       })
@@ -54,9 +55,9 @@ export default {
 .login_container {
   text-align: center;
   font-size: 1.5rem;
-  width: 25rem;
-  height: 25rem;
-  padding: 2rem;
+  width: 28rem;
+  height: 28rem;
+  padding: 2.5rem;
   border-radius: 1rem;
 }
 
@@ -108,6 +109,13 @@ input {
   &:focus {
     outline: none;
     color: var(--color-text-secondary);
+  }
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  h1{
+    font-size: 2rem;
   }
 }
 </style>
