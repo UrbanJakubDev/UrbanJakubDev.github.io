@@ -9,6 +9,10 @@
         <label for='skills'>Skills</label>
         <input id='skills' v-model='postTags' type='text' />
       </div>
+      <div class='input-box tags'>
+        <label for='previewImage'>Preview Image</label>
+        <input id='previewImage' v-model='previewImage' type='text' />
+      </div>
 
       <div class='editor'>
         <editor-menu-bar v-slot='{ commands, isActive }' :editor='editor'>
@@ -141,7 +145,7 @@
         <editor-content :editor='editor' class='editor__content' />
       </div>
       <p>
-        <a class='btn' @click.prevent='SendPost'>Odeslat</a>
+        <a class='btn' @click.prevent='sendPost'>Odeslat</a>
       </p>
     </div>
   </div>
@@ -189,6 +193,8 @@ export default {
       content: '',
       postName: null,
       postTags: null,
+      previewImage: null,
+      postId: null,
       editor: new Editor({
         onUpdate: ({ getHTML }) => {
           this.html = getHTML()
@@ -221,19 +227,47 @@ export default {
   beforeDestroy() {
     this.editor.destroy()
   },
+
+  mounted() {
+    this.getPostData($nuxt.$route.params.id)
+  },
   methods: {
-    SendPost() {
+    async getPostData(id) {
+      if (id) {
+        let response = await this.$axios.$get(`posts/${id}`)
+        console.log(response)
+        this.editor.setContent(response.content)
+        this.content = response.content
+        this.postName = response.title
+        this.postTags = response.tags
+        this.previewImage = response.previewImage
+        this.postId = response.id
+      }
+    },
+
+    sendPost() {
       console.log(this.content)
       let data = {
+        id: this.postId,
         title: this.postName,
         content: this.imageFilter(this.content),
         slug: this.postName + '5',
-        tags: this.postTags
+        tags: this.postTags,
+        previewImage: this.previewImage
       }
       // this.$axios.setToken(this.$store.$auth.$storage._state['_token.local'])
-      this.$axios.$post(`/posts`, data).then(
-        (response) => {
-        })
+
+      if (this.postId) {
+        this.$axios.$put(`/posts/${this.postId}`, data).then(
+          (response) => {
+          })
+      } else {
+        this.$axios.$post(`/posts`, data).then(
+          (response) => {
+          })
+
+      }
+
     },
 
     showImagePrompt(command) {

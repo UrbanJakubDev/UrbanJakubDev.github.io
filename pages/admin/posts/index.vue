@@ -37,16 +37,14 @@ export default {
   },
   methods: {
     getAllPosts() {
-      axios
-        .get('http://localhost:5000/api/posts')
-        .then((response) => {
-          console.log(response)
-          this.postList = response.data
+      this.$axios.$get('/posts')
+        .then((data) => {
+          this.postList = data
         })
         .catch(console.error())
     },
     editPost(id) {
-      console.log(id)
+      this.$router.push({ name: 'admin-post-create', params: { id: id }} )
     },
     deletePost(id) {
       this.$axios.$delete(`posts/${id}`).then(

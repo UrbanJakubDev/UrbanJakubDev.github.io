@@ -37,7 +37,7 @@ export default {
   methods: {
     dateFormat(datetime) {
       return moment(datetime).fromNow()
-    },
+    }
   }
 }
 </script>
@@ -48,7 +48,12 @@ export default {
   margin: 5rem auto;
 
   table {
+    text-align: left;
     width: 100%;
+  }
+
+  thead {
+    border: 2px solid white;
   }
 }
 </style>

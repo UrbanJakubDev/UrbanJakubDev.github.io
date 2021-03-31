@@ -3,7 +3,8 @@
     <NuxtLink :to="{ name: 'portfolio-slug', params: { slug: post.id }}">
       <div class='post-header'>
         <img alt=''
-             class='acrticle-preview-image' src='https://res.cloudinary.com/dqdmwnui6/image/upload/v1615463713/agkjhakg_nr3ibl.png'>
+             class='acrticle-preview-image'
+             v-bind:src='post.previewImage'>
       </div>
       <div class='post-body'>
         <h3>{{ post.title }}</h3>
