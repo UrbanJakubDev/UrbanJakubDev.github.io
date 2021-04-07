@@ -55,14 +55,6 @@ export default {}
   width: 100%;
 }
 
-footer {
-  position: sticky;
-  bottom: 0;
-  text-align: center;
-  background-color: var(--color-header-bg);
-}
-
-
 /* Larger than tablet */
 @media (min-width: 750px) {
 .page_body{

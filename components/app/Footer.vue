@@ -12,8 +12,15 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .fa-vuejs{
   color: #41B883;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  background-color: var(--color-header-bg);
 }
 </style>
