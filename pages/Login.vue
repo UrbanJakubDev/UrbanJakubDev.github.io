@@ -26,12 +26,20 @@
         <li v-for='error in errors'>{{ error }}</li>
       </ul>
     </div>
+
+    <div v-if='error' class='popup'>
+      <p> {{ error }}</p>
+    </div>
+
   </div>
 </template>
 
 <script>
 export default {
+  /* Nuxt Layout */
   layout: 'login',
+
+
   data() {
     return {
       email: '',
@@ -41,12 +49,12 @@ export default {
     }
   },
   methods: {
-
     /*
     Validate Form function
      */
     checkForm() {
       this.errors = []
+      this.error = null
 
       // Email Validate
       if (!this.email) {
@@ -105,7 +113,7 @@ export default {
         // Redirect to Dashboard
         this.$router.push('admin/Dashboard')
       }).catch((e) => {
-        this.errors.push(e.response.data.message)
+        this.error = e.response.data.message
       })
     }
   }
@@ -180,7 +188,6 @@ input {
   background-color: transparent;
   border: none;
   color: var(--color-text-secondary);
-
 
   &:focus {
     outline: none;
