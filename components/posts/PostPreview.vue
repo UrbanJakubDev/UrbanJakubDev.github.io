@@ -7,9 +7,9 @@
              v-bind:src='post.previewImage'>
       </div>
       <div class='post-body'>
-        <h3>{{ post.title }}</h3>
-        <article v-html='preview(post.content)'></article>
-        <span class='article_more'>More...</span>
+        <h2>{{ post.title }}</h2>
+        <article class='article-preview' v-html='preview(post.content)'></article>
+        <span class='article-more'>More...</span>
         <Tags :tags='post.tags' />
 
       </div>
@@ -41,7 +41,6 @@ export default {
   margin: 3rem auto;
   display: flex;
 
-
   .post-header {
     margin-top: 2rem;
     background-color: var(--color-card-preview-bg);
@@ -52,6 +51,9 @@ export default {
     }
   }
 
+  .post-body{
+    margin-top: 1rem;
+  }
 
   a {
     background-color: var(--color-card-bg);
@@ -73,6 +75,18 @@ export default {
 .tags {
   display: flex;
   flex-direction: row;
+}
+
+.article-preview, .article-more{
+  display: none;
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {
+  .article-preview,
+, .article-more{
+    display: block;
+  }
 }
 
 
