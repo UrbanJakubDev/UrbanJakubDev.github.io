@@ -35,7 +35,7 @@ export default {
     return {}
   },
   mounted() {
-    this.$axios.$get("http://localhost:5000/")
+    //this.$axios.$get("http://localhost:5000/")
   },
 }
 </script>
