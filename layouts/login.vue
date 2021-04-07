@@ -6,6 +6,7 @@
       <NuxtLink to="/">Back to Home</NuxtLink>
     </div>
   </div>
+
 </template>
 
 <script>
