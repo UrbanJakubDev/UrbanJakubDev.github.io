@@ -93,9 +93,16 @@ export default {
       }).then((response) => {
         let token = response.data.accessToken
         let user = response.data.userData
+
+        /*
+        Set token from response to
+        Nuxt Auth and Axios Module
+         */
         this.$auth.setUserToken(token)
         this.$axios.setToken(token)
         this.$auth.setUser(user)
+
+        // Redirect to Dashboard
         this.$router.push('admin/Dashboard')
       }).catch((e) => {
         this.errors.push(e.response.data.message)
