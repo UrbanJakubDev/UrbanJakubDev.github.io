@@ -61,8 +61,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    //baseURL: 'https://urbanjakubdev-server.herokuapp.com/api/',
-    baseURL: 'http://localhost:5000/api/',
+    baseURL: 'https://urbanjakubdev-server.herokuapp.com/api/',
+    //baseURL: 'http://localhost:5000/api/',
   },
 
   auth: {
@@ -101,8 +101,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  server: {
-    port: 8000, // default: 3000
-    host: '0.0.0.0', // default: localhost
-  }, // other configs
+  // server: {
+  //   port: 8000, // default: 3000
+  //   host: '0.0.0.0', // default: localhost
+  // }, // other configs
 }
