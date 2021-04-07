@@ -33,7 +33,10 @@ export default {
   layout: 'default',
   data() {
     return {}
-  }
+  },
+  mounted() {
+    this.$axios.$get("http://localhost:5000/")
+  },
 }
 </script>
 
