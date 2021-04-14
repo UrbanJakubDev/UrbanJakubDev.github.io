@@ -18,10 +18,10 @@
       </div> -->
 
       <section class='social'>
-        <a href=''><i class='fab fa-github'></i></a>
-        <a href=''><i class='fab fa-linkedin'></i></a>
-        <a href=''><i class='fab fa-dribbble'></i></a>
-        <a href=''><i class='fab fa-instagram'></i></a>
+        <a href='https://github.com/UrbanJakubDev'><i class='fab fa-github'></i></a>
+        <a href='https://www.linkedin.com/in/jakub-urban-335278149/'><i class='fab fa-linkedin'></i></a>
+        <a href='https://dribbble.com/Kubiurbi'><i class='fab fa-dribbble'></i></a>
+        <a href='#'><i class='fab fa-instagram'></i></a>
       </section>
     </div>
   </div>
@@ -33,9 +33,6 @@ export default {
   layout: 'default',
   data() {
     return {}
-  },
-  mounted() {
-    //this.$axios.$get("http://localhost:5000/")
   },
 }
 </script>

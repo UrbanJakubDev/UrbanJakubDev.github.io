@@ -14,7 +14,8 @@
       </blockquote>
       <p>
         Začal jsem programovat přibližně v roce 2015 v "céčku" různé drobnosti na platformě Arduino.
-        Další můj postup byla částečná automatizace mojí práce pomocí VBA. Snažil jsem se vytvořit nějaký nástroj, který mi pomůže
+        Další můj postup byla částečná automatizace mojí práce pomocí VBA. Snažil jsem se vytvořit nějaký nástroj, který
+        mi pomůže
         spravovat několik desítek excelů, hromadně v nich měnt obsah a těžit data na jeden klik.
       </p>
       <blockquote>
@@ -22,7 +23,14 @@
       </blockquote>
 
       <p>
+        V roce 2019 jsem si řekl, že excel už není pro mě a začal se učit programovat v pythonu, databáze, servery
+        apod..
+        Cílem bylo všechny moje nástroje přesunout do jednoho systému. Zrodil se tedy nápad na EnergoTools.
+        ET jsou balíček nástrojů pro lepší práci s našimy daty.
+      </p>
 
+      <p>
+        Nyní se snažím naučit webové technologie jako Vue, React, Angular a později přidat .NET na backend případně PHP
       </p>
 
     </section>
