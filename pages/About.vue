@@ -22,15 +22,26 @@
         <p>Tady jsem si uvědomil, že jsem fakt dobrej v usnadňování si práce.</p>
       </blockquote>
 
+      <h4>První krůčky v programování...</h4>
       <p>
-        V roce 2019 jsem si řekl, že excel už není pro mě a začal se učit programovat v pythonu, databáze, servery
+        V roce 2019 jsem si řekl, že excel už není pro mě a začal se učit programovat v Pythonu, databáze, servery
         apod..
         Cílem bylo všechny moje nástroje přesunout do jednoho systému. Zrodil se tedy nápad na EnergoTools.
-        ET jsou balíček nástrojů pro lepší práci s našimy daty.
+        ET jsou balíček nástrojů které nám usnadnují práci. Za poslední 2 roky jsme napsali několik verzí EnergoTools a
+        postupně vylepšovali.
       </p>
 
+
+      <h4>Podzim 2020...</h4>
       <p>
-        Nyní se snažím naučit webové technologie jako Vue, React, Angular a později přidat .NET na backend případně PHP
+        Na podzim s další vlnou Covid-19 jsem se začal učit Vue.js, Javasript a Frontend techologie obecně (HTML, CSS a jeho preprocesory), jelikož jsem byl dost limitován
+        znalostí jen Pythonu jako nástroje pro backend.
+      </p>
+
+      <h4>Co dál?</h4>
+      <p>
+        Nyní vytvářím drobné aplikace ve Vue.js, React tak abych měl nějaké portfolio.
+        Na backendu se učím Node.js + Express framework. Dále bych se rád naučil .NET případně Laravel.
       </p>
 
     </section>
@@ -45,5 +56,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-
+h4 {
+  margin: 2.5rem auto .5rem auto;
+}
 </style>
