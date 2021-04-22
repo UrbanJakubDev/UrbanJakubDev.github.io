@@ -71,4 +71,12 @@ img {
   margin: 0 auto;
 }
 
+.button-group{
+  display: flex;
+  justify-content: left;
+}
+.btn {
+  margin-right: 1rem;
+}
+
 </style>
