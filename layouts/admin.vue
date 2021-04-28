@@ -24,6 +24,10 @@ export default {}
   font-size: 1rem;
 }
 
+.page_container{
+  width: 90%
+}
+
 .page_header {
   //background-color: var(--color-header-bg);
   position: sticky;
@@ -64,6 +68,10 @@ export default {}
 
   .admin__navigation__container{
     width: 25%;
+  }
+
+  .content__container{
+    padding: 0 1rem 0 2rem;
   }
 }
 </style>

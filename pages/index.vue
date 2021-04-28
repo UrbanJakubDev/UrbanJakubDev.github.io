@@ -11,17 +11,11 @@
           pracovat na tvorbě zajímavých webů a webových aplikací.
         </p>
       </section>
-      <!-- <div class="content">
-        <NuxtLink to="/about" class="card" v-for="item in cardList" :key="item.id">
-          <Card :cardText='item.text' :cardTags="cardTags" />
-        </NuxtLink>
-      </div> -->
 
       <section class='social'>
         <a href='https://github.com/UrbanJakubDev' target="_blank"><i class='fab fa-github'></i></a>
         <a href='https://www.linkedin.com/in/jakub-urban-335278149/' target="_blank"><i class='fab fa-linkedin'></i></a>
         <a href='https://dribbble.com/Kubiurbi' target="_blank"><i class='fab fa-dribbble'></i></a>
-        <a href='#'><i class='fab fa-instagram'></i></a>
       </section>
     </div>
   </div>

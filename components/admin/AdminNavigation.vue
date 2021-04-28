@@ -29,9 +29,11 @@ export default {
 
 <style lang="scss" scoped>
 .admin__navigation__container {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   font-size: 1.3rem;
+  border-right: 1px solid grey;
 }
 
 h4 {

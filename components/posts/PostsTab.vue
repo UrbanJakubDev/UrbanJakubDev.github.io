@@ -1,7 +1,7 @@
 <template>
   <div class='table-wrapper'>
     <table>
-      <thead>
+      <thead class="thead">
       <th>Title</th>
       <th>SLug</th>
       <th>Ceated at</th>
@@ -52,8 +52,5 @@ export default {
     width: 100%;
   }
 
-  thead {
-    border: 2px solid white;
-  }
 }
 </style>
