@@ -1,17 +1,24 @@
 <template>
   <div class="post-preview-container box-shadow'">
-    <NuxtLink :to="{ name: 'portfolio-slug', params: { slug: post.id }}">
-      <div class='post-header'>
-        <img alt=''
-             class='acrticle-preview-image'
-             v-bind:src='post.previewImage'>
+    <NuxtLink
+      class="post-preview-wrapper"
+      :to="{ name: 'portfolio-slug', params: { slug: post.id } }"
+    >
+      <div class="post-header">
+        <img
+          alt=""
+          class="acrticle-preview-image"
+          v-bind:src="post.previewImage"
+          v-if="post.previewImage"
+        />
       </div>
-      <div class='post-body'>
+      <div class="post-body">
         <h2>{{ post.title }}</h2>
-        <article class='article-preview' v-html='preview(post.content)'></article>
-        <span class='article-more'>More...</span>
-        <Tags :tags='post.tags' />
-
+        <article
+          class="article-preview"
+          v-html="preview(post.content)"
+        ></article>
+        <Tags :tags="post.tags" />
       </div>
     </NuxtLink>
   </div>
@@ -22,54 +29,56 @@ export default {
   props: {
     post: {
       type: Object,
-      default: {}
-    }
+      default: {},
+    },
   },
   methods: {
     preview(content) {
       let first_par_start = content.indexOf('<p>')
       let first_par_end = content.indexOf('</p>')
       return content.substring(first_par_start, first_par_end)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang='scss' scoped>
+h2 {
+  font-size: 2.6rem;
+}
 .post-preview-container {
-
+  width: 85%;
   margin: 3rem auto;
   display: flex;
+  font-size: 1.4rem;
+}
+.post-preview-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.post-header {
+  max-height: 25rem;
+  margin-top: 2rem;
+  background-color: var(--color-card-preview-bg);
+  text-align: center;
 
-  .post-header {
-    margin-top: 2rem;
-    background-color: var(--color-card-preview-bg);
-
-    .acrticle-preview-image {
-      height: 200px !important;
-      width: auto;
-    }
-  }
-
-  .post-body{
-    margin-top: 1rem;
-  }
-
-  a {
-    background-color: var(--color-card-bg);
-    display: block;
-    text-decoration: none;
-    width: 100%;
+  img {
     height: 100%;
-    padding: 0 2rem;
-    box-shadow: 3px 3px 15px var(--color-card-shadow);
+    width: auto;
   }
-
+}
+.post-body {
+  margin-top: 1rem;
 }
 
-.article_more {
+a {
+  background-color: var(--color-card-bg);
+  display: block;
+  text-decoration: none;
   width: 100%;
-  padding-top: 2.5rem;
+  height: 100%;
+  padding: 0 2rem;
+  box-shadow: 3px 3px 15px var(--color-card-shadow);
 }
 
 .tags {
@@ -77,17 +86,12 @@ export default {
   flex-direction: row;
 }
 
-.article-preview, .article-more{
-  display: none;
-}
-
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {
   .article-preview,
-, .article-more{
+  ,
+  .article-more {
     display: block;
   }
 }
-
-
 </style>
