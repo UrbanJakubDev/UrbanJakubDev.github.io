@@ -10,6 +10,8 @@
           prohlubuji své znalosti a dovednosti, abych mohl v blízké budoucnosti
           pracovat na tvorbě zajímavých webů a webových aplikací.
         </p>
+
+        <small>Tato aplikace je stále "In Construction" a slouží i jako můj playground...</small>
       </section>
 
       <section class='social'>

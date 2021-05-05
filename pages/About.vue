@@ -15,12 +15,8 @@
       <p>
         Začal jsem programovat přibližně v roce 2015 v "céčku" různé drobnosti na platformě Arduino.
         Další můj postup byla částečná automatizace mojí práce pomocí VBA. Snažil jsem se vytvořit nějaký nástroj, který
-        mi pomůže
-        spravovat několik desítek excelů, hromadně v nich měnt obsah a těžit data na jeden klik.
+        mi pomůže spravovat několik desítek excelů, hromadně v nich měnt obsah a těžit data na jeden klik.
       </p>
-      <blockquote>
-        <p>Tady jsem si uvědomil, že jsem fakt dobrej v usnadňování si práce.</p>
-      </blockquote>
 
       <h4>První krůčky v programování...</h4>
       <p>
@@ -40,8 +36,8 @@
 
       <h4>Co dál?</h4>
       <p>
-        Nyní vytvářím drobné aplikace ve Vue.js, React tak abych měl nějaké portfolio.
-        Na backendu se učím Node.js + Express framework. Dále bych se rád naučil .NET případně Laravel.
+        Nyní vytvářím drobné aplikace ve Vue.js, React tak abych měl nějaké portfolio a vyzkoušel s kterým nástrojem se mi dobře pracuje.
+        Na backendu se učím Node.js. Dále mám v plánu se naučit .NET případně Laravel.
       </p>
 
     </section>
