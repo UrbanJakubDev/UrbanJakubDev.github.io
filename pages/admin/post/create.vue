@@ -235,7 +235,6 @@ export default {
     async getPostData(id) {
       if (id) {
         let response = await this.$axios.$get(`posts/${id}`)
-        console.log(response)
         this.editor.setContent(response.content)
         this.content = response.content
         this.postName = response.title
@@ -246,7 +245,6 @@ export default {
     },
 
     sendPost() {
-      console.log(this.content)
       let data = {
         id: this.postId,
         title: this.postName,
