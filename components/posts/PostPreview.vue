@@ -5,19 +5,27 @@
       :to="{ name: 'portfolio-slug', params: { slug: post.id } }"
     >
       <div class="post-header">
-        <img
+        <!-- <img
           alt=""
           class="acrticle-preview-image"
           v-bind:src="post.previewImage"
           v-if="post.previewImage"
-        />
+        /> -->
       </div>
       <div class="post-body">
         <h2>{{ post.title }}</h2>
-        <article
-          class="article-preview"
-          v-html="preview(post.content)"
-        ></article>
+        <div class="post-content">
+          <img
+            alt=""
+            class="acrticle-preview-image"
+            v-bind:src="post.previewImage"
+            v-if="post.previewImage"
+          />
+          <article
+            class="article-preview"
+            v-html="preview(post.content)"
+          ></article>
+        </div>
         <Tags :tags="post.tags" />
       </div>
     </NuxtLink>
@@ -61,14 +69,20 @@ h2 {
   margin-top: 2rem;
   background-color: var(--color-card-preview-bg);
   text-align: center;
+}
 
-  img {
-    height: 100%;
-    width: auto;
-  }
+img {
+  margin: 0 1rem 0 0;
+  width: 50%;
 }
 .post-body {
   margin-top: 1rem;
+}
+
+.post-content{
+  display: flex;
+  flex-direction: row;
+
 }
 
 a {
